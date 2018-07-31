@@ -1,8 +1,3 @@
-# require "github_api"
-# require "smartling"
-# require 'active_support/all'
-# require 'date'
-
 class PullRequest
 
   attr_accessor :data
@@ -50,12 +45,10 @@ class PullRequest
   end
 
   def files
-    # @files ||= smartling_manager.github.pull_requests.files(repo_owner, repo_name, number).body.map{ |hsh| hsh["filename"] }
     @files ||= @github_connector.pull_requests.files(repo_owner, repo_name, number).body.map{ |hsh| hsh["filename"] }
   end
 
   def file_infos(smartling_manager)
-    # @file_infos ||= smartling_manager.github.pull_requests.files(repo_owner, repo_name, number).body
     @file_infos ||= @github_connector.pull_requests.files(repo_owner, repo_name, number).body
   end
 
