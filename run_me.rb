@@ -1,6 +1,4 @@
-# ruby 2.2.0
-# https://github.com/peter-murach/github
-# Be sure to gem install github_api
+# ruby 2.2.5
 require 'github_api'
 require 'yaml'
 require 'active_support/all'
